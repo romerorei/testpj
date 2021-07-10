@@ -1,6 +1,10 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :update, :destroy]
 
+  rescue_from ActiveRecord::RecordNotFound do |e|
+    render json: {error: e.message}, status: :not_found
+  end
+
   # GET /orders
   def index
     @orders = Order.all
@@ -39,7 +43,11 @@ class OrdersController < ApplicationController
 
   # DELETE /orders/1
   def destroy
-    @order.destroy
+    if @order.destroy
+      render json: { success: true }
+    else
+        render json: { success: false }
+    end
   end
 
   private
