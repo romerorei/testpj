@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  
+  root "orders#index"
   resources :orders
   resources :products
   mount Rswag::Ui::Engine => '/api-docs'
