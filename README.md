@@ -11,8 +11,8 @@
 - Se escribieron pruebas de modelo y controlador con RSpec
 - Se pueden probar los endpoints a través de POSTMAN
 # ORDER:
- URL https://serene-river-70641.herokuapp.com/orders (DEFAULT ENDPOINT)
- Ejemplo para crear una orden en postman:
+ - URL https://serene-river-70641.herokuapp.com/orders (DEFAULT ENDPOINT)
+   - Ejemplo para crear una orden en postman:
     { 
         "store_id": "4",
         "order_products_attributes": [
@@ -23,6 +23,6 @@
     }
 
 # STORE:
- URL https://serene-river-70641.herokuapp.com/stores
+ - URL https://serene-river-70641.herokuapp.com/stores
 # PRODUCT:
-URL https://serene-river-70641.herokuapp.com/products
+- URL https://serene-river-70641.herokuapp.com/products
