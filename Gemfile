@@ -49,6 +49,7 @@ end
   group :production do
 
   gem 'rails_12factor'
+  gem 'rspec-rails', '~> 4.1.0'
 
   end
 
