@@ -39,7 +39,11 @@ class OrdersController < ApplicationController
 
   # DELETE /orders/1
   def destroy
-    @order.destroy
+    if @order.destroy
+      render json: { success: true }
+    else
+        render json: { success: false }
+    end
   end
 
   private
