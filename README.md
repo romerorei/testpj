@@ -4,7 +4,7 @@
 # Test Técnico Backend Developer PJ
 
 
-# A continuación los detalles sobre el resultado obtenido en la creación de API para ordenes.
+A continuación los detalles sobre el resultado obtenido en la creación de API para ordenes.
 
 - CRUD creado para los modelos Store, Product y Order con sus respectivas relaciones
 - Se hizo deploy de la app en heroku ( https://test-pj.herokuapp.com/ )
