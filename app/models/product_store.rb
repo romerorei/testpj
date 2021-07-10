@@ -1,4 +1,4 @@
 class ProductStore < ApplicationRecord
-    belong_to :product
-    belong_to :store
+    belongs_to :product
+    belongs_to :store
 end
