@@ -1,6 +1,10 @@
 class StoresController < ApplicationController
   before_action :set_store, only: [:show, :update, :destroy]
      
+  rescue_from ActiveRecord::RecordNotFound do |e|
+    render json: {error: e.message}, status: :not_found
+  end
+
   # GET /store
   def index
       @stores = Store.all
@@ -15,16 +19,21 @@ class StoresController < ApplicationController
 
   # POST /store
   def create
-      @store = Store.create!(store_params)
-      render json: @store, status: :created
+      @store = Store.new(store_params)
+
+      if @store.save
+        render json: @store, status: :created, location: @store
+      else
+        render json: @store.errors, status: :unprocessable_entity
+      end
   end
 
   # PUT /stores/{:id}
   def update
       if @store.update!(store_params)
-        render json: { success: true }
+        render json: @store
       else
-        render json: { success: false }
+        render json: @store.errors, status: :unprocessable_entity
       end
   end
   
@@ -40,7 +49,6 @@ class StoresController < ApplicationController
 
   def store_params
       params.require(:store).permit(:name, :address, :email, :phone)
-      
   end
 
   def set_store
