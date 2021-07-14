@@ -4,14 +4,13 @@
 # Test Técnico Backend Developer PJ
 
 
-#A continuación los detalles sobre el resultado obtenido en la creación de API para ordenes.
+A continuación los detalles sobre el resultado obtenido en la creación de API para ordenes.
 
 - CRUD creado para los modelos Store, Product y Order con sus respectivas relaciones
-- Se hizo deploy de la app en heroku ( https://serene-river-70641.herokuapp.com/orders )
-- Se escribieron pruebas de modelo y controlador con RSpec
+- Se hizo deploy de la app en heroku ( https://test-pj.herokuapp.com/ )
 - Se pueden probar los endpoints a través de POSTMAN
 # ORDER:
- - URL https://serene-river-70641.herokuapp.com/orders (DEFAULT ENDPOINT)
+ - URL https://test-pj.herokuapp.com/ (DEFAULT ENDPOINT)
    - Ejemplo para crear una orden en postman:
     { 
         "store_id": "4",
@@ -23,6 +22,6 @@
     }
 
 # STORE:
- - URL https://serene-river-70641.herokuapp.com/stores
+ - URL https://test-pj.herokuapp.com/stores
 # PRODUCT:
-- URL https://serene-river-70641.herokuapp.com/products
+- URL https://test-pj.herokuapp.com/products
