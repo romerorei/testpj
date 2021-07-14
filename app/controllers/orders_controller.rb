@@ -9,7 +9,7 @@ class OrdersController < ApplicationController
   def index
     @orders = Order.all
 
-    render json: @orders
+    render json: @orders.includes(:store, :products), status: :ok
   end
 
   # GET /orders/1
@@ -27,6 +27,7 @@ class OrdersController < ApplicationController
 
     if @order.save
       render json: @order, status: :created, location: @order
+      OrderReportJob.perform_later(@order.id)
     else
       render json: @order.errors, status: :unprocessable_entity
     end

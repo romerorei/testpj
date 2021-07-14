@@ -49,9 +49,11 @@ end
   group :production do
 
   gem 'rails_12factor'
-  gem 'rspec-rails', '~> 4.1.0'
+
 
   end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem  "active_model_serializers" ,  "~> 0.10.8"
+gem 'letter_opener'

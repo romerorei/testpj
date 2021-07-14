@@ -8,7 +8,7 @@ class StoresController < ApplicationController
   # GET /store
   def index
       @stores = Store.all
-      render json: @stores, status: :ok
+      render json: @stores.includes(:orders, :products), status: :ok
       
   end
 

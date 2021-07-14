@@ -1,0 +1,10 @@
+Store: <%= @order.store.name %><br>
+Orden_id: <%= @order.id %><br>
+Fecha y hora: <%= @order.created_at %><br>
+
+Pedido:<br> <% @order.products.map do | producto|  %>
+        name: <%=  producto.name %> | price:  <%= producto.price %> <br>
+        <%end %><br>
+total: <%= @order.total %>
+
+
